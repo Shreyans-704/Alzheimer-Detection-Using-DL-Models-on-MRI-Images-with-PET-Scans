@@ -87,6 +87,26 @@ Performance (Augmented Dataset):
 
 ---
 
+## 🔧 Improvements (Post Evaluation)
+
+After initial evaluation, the model showed very high accuracy (~99%), which was identified as unrealistic.
+
+### Issue:
+- Data leakage due to random dataset splitting
+- Similar images present in both training and testing sets
+
+### Fixes Applied:
+- Implemented stratified splitting
+- Built a custom dataset pipeline
+- Removed data leakage
+- Applied weighted loss to handle class imbalance
+
+### Updated Results:
+- Accuracy: ~95.7%
+- Improved generalization
+  
+---
+
 ### Model 2: Vision Transformer (ViT – vit_base_patch16_224)
 Configuration:
 - Image Size: 224 × 224
