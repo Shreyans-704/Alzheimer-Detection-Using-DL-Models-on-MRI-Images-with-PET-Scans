@@ -1,157 +1,258 @@
-# 🧠 Alzheimer Detection Using DL Models on MRI Images with PET Scans
+# 🧠 Alzheimer Detection Using Deep Learning on MRI & PET Scans
+
+---
 
 ## 📌 Overview
-Alzheimer’s disease is a progressive neurodegenerative brain disorder that gradually destroys memory and cognitive abilities. Early diagnosis plays a crucial role in slowing disease progression and improving the quality of life of patients.
 
-Manual analysis of MRI brain scans is time-consuming and requires expert interpretation. This project leverages Deep Learning (DL) techniques to automatically classify MRI brain images into different stages of Alzheimer’s disease. PET scan integration is also explored to further enhance diagnostic accuracy.
+Alzheimer’s disease is a progressive neurodegenerative disorder that affects memory and cognitive functions. Early diagnosis is crucial for slowing disease progression and improving patient outcomes.
+
+Manual interpretation of MRI scans is time-consuming and requires expert knowledge. This project leverages **Deep Learning (DL)** techniques to automatically classify brain scans into different stages of Alzheimer’s disease. Additionally, **PET scan integration** is explored to enhance diagnostic accuracy.
 
 ---
 
 ## 🏫 Academic Information
-- Institute: Dr. B. R. Ambedkar National Institute of Technology, Jalandhar
-- Department: Information Technology
-- Project Type: Minor Project
+
+* **Institute:** Dr. B. R. Ambedkar National Institute of Technology, Jalandhar
+* **Department:** Information Technology
+* **Project Type:** Minor Project
 
 ---
 
 ## 👨‍🎓 Project Team
-- Shreyans Jaiswal (23124103)
-- Abhinoor Tayal (23124003)
-- Parav Sharma (23124072)
+
+* Shreyans Jaiswal (23124103)
+* Abhinoor Tayal (23124003)
+* Parav Sharma (23124072)
+
+### 👨‍🏫 Supervisor
+
+Dr. Mohit Kumar Saini
+Assistant Professor, Department of IT
 
 ---
 
-## 👨‍🏫 Project Supervisor
-- Dr. Mohit Kumar Saini  
-  Assistant Professor, Department of Information Technology
+## 🧠 Alzheimer’s Disease Stages
 
----
+The model classifies brain scans into four categories:
 
-## 🧠 Stages of Alzheimer’s Disease
-The system classifies MRI brain scans into the following stages:
-- Non-Demented
-- Very Mild Dementia
-- Mild Dementia
-- Moderate Dementia
+* Non-Demented
+* Very Mild Demented
+* Mild Demented
+* Moderate Demented
 
 ---
 
 ## ❗ Problem Statement
-- Manual interpretation of MRI scans is slow and complex
-- Early Alzheimer’s symptoms are subtle and can be missed
-- Limited automated diagnostic tools are available
-- An AI-based system is required for early and accurate detection
+
+* Manual MRI analysis is slow and complex
+* Early-stage Alzheimer’s symptoms are subtle
+* High dependency on expert radiologists
+* Lack of scalable automated diagnostic systems
+
+👉 This project aims to build an **AI-based classification system** for early and accurate detection.
 
 ---
 
 ## 🎯 Objectives
-- Preprocess MRI images to improve quality and remove noise
-- Build and train deep learning models for Alzheimer’s stage classification
-- Optimize models to improve accuracy, precision, recall, and F1-score
-- Compare different models to identify the best-performing approach
-- Visualize results using confusion matrices and performance metrics
-- Prepare a detailed technical report with future improvements
+
+* Preprocess MRI images (resize, normalize, augment)
+* Train deep learning models for classification
+* Improve performance using optimization techniques
+* Compare CNN and Transformer-based models
+* Evaluate using Accuracy, Precision, Recall, and F1-score
+* Analyze results using confusion matrices
 
 ---
 
-## 📂 Dataset Used
-- OASIS Dataset (Open Access Series of Imaging Studies)  
-  https://drive.google.com/drive/folders/1GMJ50JF6zc7TyXNWuXzkr7siypdqodo8
+## 📂 Dataset
 
-- Augmented Alzheimer MRI Dataset (Kaggle)  
-  https://www.kaggle.com/datasets/uraninjo/augmented-alzheimer-mri-dataset
+### 🔹 OASIS Dataset
 
----
+(Open Access Series of Imaging Studies)
+https://drive.google.com/drive/folders/1GMJ50JF6zc7TyXNWuXzkr7siypdqodo8
 
-## 🛠️ Model Implementation
+### 🔹 Augmented Alzheimer MRI Dataset (Kaggle)
 
-### Model 1: ResNet-18 (CNN)
-Hyperparameters:
-- Batch Size: 32
-- Learning Rate: 1e-4
-- Epochs: 18
-- Weight Decay: 1e-5
-- Number of Classes: 4
-
-Performance (Original Dataset):
-- Accuracy: 87.45%
-- Precision (Weighted): 86.78%
-- Recall (Weighted): 87.45%
-- F1-Score (Weighted): 86.83%
-
-Performance (Augmented Dataset):
-- Accuracy: 99.84%
-- Precision: 99.84%
-- Recall: 99.84%
-- F1-Score: 99.84%
+https://www.kaggle.com/datasets/uraninjo/augmented-alzheimer-mri-dataset
 
 ---
 
-## 🔧 Improvements (Post Evaluation)
+## 🧠 Models Implemented
 
-After initial evaluation, the model showed very high accuracy (~99%), which was identified as unrealistic.
+### 🔹 ResNet-18 (CNN)
 
-### Issue:
-- Data leakage due to random dataset splitting
-- Similar images present in both training and testing sets
+**Hyperparameters:**
 
-### Fixes Applied:
-- Implemented stratified splitting
-- Built a custom dataset pipeline
-- Removed data leakage
-- Applied weighted loss to handle class imbalance
+* Batch Size: 32
+* Learning Rate: 1e-4
+* Epochs: 18
+* Weight Decay: 1e-5
 
-### Updated Results:
-- Accuracy: ~95.7%
-- Improved generalization
-  
+**Performance (Original Dataset):**
+
+* Accuracy: 87.45%
+* F1 Score: 86.83%
+
+**Performance (Augmented Dataset):**
+
+* Accuracy: 99.84%
+
 ---
 
-### Model 2: Vision Transformer (ViT – vit_base_patch16_224)
-Configuration:
-- Image Size: 224 × 224
-- Batch Size: 32
-- Learning Rate: 5e-5
-- Epochs: 30
+### 🔧 Model Improvements
 
-Performance (MRI Only):
-- Validation Accuracy: 96.28%
-- Validation Loss: 0.1089
+**Issue Identified:**
 
-Performance (MRI + PET Integration):
-- Initial Accuracy (Before Training): 15%
-- Validation Accuracy: 99.97%
-- Validation Loss: 0.0279
+* Unrealistically high accuracy (~99%)
+* Data leakage due to improper splitting
+
+**Fixes Applied:**
+
+* Stratified dataset splitting
+* Removal of duplicate samples
+* Proper train-test separation
+* Weighted loss for imbalance
+
+**Updated Performance:**
+
+* Accuracy: ~95%
+* Improved generalization
+
+---
+
+### 🔹 Vision Transformer (ViT)
+
+**Configuration:**
+
+* Image Size: 224×224
+* Batch Size: 32
+* Learning Rate: 5e-5
+* Epochs: 30
+
+**MRI Only:**
+
+* Accuracy: 96.28%
+* Loss: 0.1089
+
+**MRI + PET (Multi-Modal):**
+
+* Accuracy: **99.97%**
+* Loss: 0.0279
+
+👉 **Best Performing Model**
+
+---
+
+## 📈 Key Insights
+
+* Data quality > model complexity
+* Augmentation significantly improves performance
+* Multi-modal learning (MRI + PET) gives highest accuracy
+* Early-stage detection remains the most challenging
+
+---
+
+## 📂 Project Structure
+
+```bash
+Alzheimer-Detection/
+│
+├── app/                        # Streamlit app (UI)
+│   └── app.py
+│
+├── models/                     # Trained models
+│   ├── resnet18.pth
+│   ├── vit_model.pth
+│   └── capsnet.pth
+│
+├── notebooks/                  # Jupyter notebooks
+│   ├── resnet_training.ipynb
+│   ├── vit_training.ipynb
+│   ├── evaluation.ipynb
+│
+├── utils/                      # Helper functions
+│   ├── preprocessing.py
+│   ├── model_loader.py
+│   ├── inference.py
+│
+├── data/ (optional)            # Dataset (not included)
+│
+├── predict.py                  # Inference script
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/yourusername/alzheimer-detection.git
+cd alzheimer-detection
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 🚀 Usage
+
+### ▶️ Run Prediction
+
+```bash
+python predict.py
+```
+
+---
+
+## 💻 Demo (Optional)
+
+```bash
+streamlit run app/app.py
+```
 
 ---
 
 ## ⚠️ Challenges
-- Limited data for some Alzheimer’s stages
-- Subtle visual differences in early-stage MRI images
-- Variations in MRI image quality and resolution
-- Risk of overfitting due to model complexity
-- Challenges in real-world hospital deployment
+
+* Class imbalance in dataset
+* Subtle differences in early-stage images
+* Risk of overfitting
+* Dataset variability
+* Deployment in real-world clinical settings
 
 ---
 
 ## 🚀 Future Scope
-- Multi-modal learning using combined MRI and PET scans
-- Federated learning for privacy-preserving hospital collaboration
-- Explainable AI (XAI) to highlight critical brain regions
-- Training on larger and more diverse datasets
-- Integration into real-time clinical decision-support systems
+
+* Capsule Networks (CapsNet)
+* Grad-CAM (Explainable AI)
+* 3D MRI analysis
+* Federated learning
+* Clinical integration
 
 ---
 
 ## 📚 References
-- Research Paper: https://www.biorxiv.org/content/10.1101/070441v4.full.pdf
-- OASIS Dataset
-- Augmented Alzheimer MRI Dataset (Kaggle)
-- CNN Google Colab Notebook
-- Vision Transformer Google Colab Notebook
+
+* OASIS Dataset
+* Kaggle Alzheimer MRI Dataset
+* PyTorch Documentation
+* Vision Transformer Research
 
 ---
 
 ## ⚠️ Disclaimer
-This project is developed strictly for academic and research purposes.
-It is not intended for clinical diagnosis without medical professional validation.
+
+This project is developed strictly for **academic and research purposes**.
+It is **not intended for clinical use** without validation by medical professionals.
+
+---
+
