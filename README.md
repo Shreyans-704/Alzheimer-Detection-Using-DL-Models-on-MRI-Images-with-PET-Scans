@@ -1,3 +1,16 @@
+## 📩 Contact
+
+**Email:** [shreyans.jaiswal704@gmail.com](mailto:shreyans.jaiswal704@gmail.com)
+
+---
+
+## ⚠️ Important Note
+
+While this model demonstrates strong predictive performance, actual clinical diagnosis of Alzheimer’s disease depends on multiple factors such as patient history, genetics, and professional medical evaluation.
+
+This project is developed strictly for **research and educational purposes only** and should **not be used as a substitute for clinical diagnosis or medical advice**.
+
+
 # 🧠 Alzheimer Detection Using Deep Learning on MRI & PET Scans
 
 ---
@@ -26,7 +39,8 @@ Manual interpretation of MRI scans is time-consuming and requires expert knowled
 
 ### 👨‍🏫 Supervisor
 
-Dr. Mohit Kumar Saini
+Dr. Mohit Kumar 
+<br>
 Assistant Professor, Department of IT
 
 ---
@@ -66,9 +80,8 @@ The model classifies brain scans into four categories:
 
 ## 📂 Dataset
 
-### 🔹 OASIS Dataset
+### 🔹 OASIS Dataset - (Open Access Series of Imaging Studies)
 
-(Open Access Series of Imaging Studies)
 https://drive.google.com/drive/folders/1GMJ50JF6zc7TyXNWuXzkr7siypdqodo8
 
 ### 🔹 Augmented Alzheimer MRI Dataset (Kaggle)
@@ -249,10 +262,5 @@ streamlit run app/app.py
 
 ---
 
-## ⚠️ Disclaimer
 
-This project is developed strictly for **academic and research purposes**.
-It is **not intended for clinical use** without validation by medical professionals.
-
----
 
